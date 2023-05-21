@@ -8,6 +8,10 @@ export default function DefaultLayout() {
         return <Navigate to="/login"/>
     }
 
+    const onLogout = (ev) => {
+        ev.preventDefault()
+    }
+
     return (
         <div id="defaultLayout">
             <aside>
@@ -20,7 +24,8 @@ export default function DefaultLayout() {
                         Head
                     </div>
                     <div>
-                        User info
+                        {user.name}
+                        <a className="btn-logout" href="#" onClick={onLogout}>Log out</a>
                     </div>
                 </header>
                 <main>
